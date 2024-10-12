@@ -1,0 +1,1 @@
+PelixFlix cuenta con un sistema de gestión de contenidos alojado en su propio servidor. Para el correcto funcionamiento de este, es necesaria la base de datos "proyecto". Importa el archivo "bdproyecto.sql" en tu gestor de Base de Datos.
