@@ -1,0 +1,887 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: 'open sans';
+    background-color: #242222;
+    color:#f1f1f2;
+    
+}
+
+table tr, table td{
+    color: white;
+}
+
+/* BOTON MODIFICAR PARA ADMINISTRADORES */
+.admin{
+    font-size: 16px; 
+	text-transform: uppercase;
+	font-weight: bold; 
+	color: #ffffff; 
+	border-radius: 5px; 
+	letter-spacing: 2px; 
+	background-color: #E91E63; 
+	padding: 18px 30px;
+	position: fixed;
+	bottom: 40px;
+	right: 40px;
+	transition: all 300ms ease 0ms;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	z-index: 99;
+}
+/*************************************/
+main{
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.742);
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+}
+.container{
+    box-shadow: 10px 10px 10px black;
+    background-color: rgba(0, 0, 0, 0.742);
+}
+/*PIE DE PAGINA*/
+.footer{
+    background-color: rgba(255, 255, 255, 0.825);
+}
+.footer label{
+    color: black;
+}
+.footer .mr-cinco{
+    margin-right:50px;
+}
+/**********************/
+/* Estilos para el boton de acceso de administradores */
+#btn-mas{
+  display: none;
+}
+.MenuAcciones{
+    z-index: 20;
+    position: fixed;
+    bottom: 50px;
+    left: 50px;
+}
+.acciones a, .icon-mas2{
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    background-color: #cc2b2b;
+    color:#fff;
+    list-style: 55px;
+    text-align: center;
+    box-shadow: 0px 1px 10px rgb(0,0,0,0.4);
+    transition: all 500ms ease;
+}
+.acciones a:hover{
+    background-color: #fff;
+    color: #cc2b2b;
+}
+.acciones a{
+    margin-bottom: -15px;
+    opacity: 0;
+    visibility: hidden;
+}
+#btn-mas:checked~ .acciones a{
+    margin-bottom: 10px;
+    opacity: 1;
+    visibility: visible;
+
+}
+.acciones .icon-mas2{
+    border-radius: 50%;
+    font-size: 40px;
+    cursor: pointer;
+    background-color: #f44141;
+}
+.icon-mas2:hover{
+    color: #f44141;
+    background-color: #fff;
+
+}
+/* ESTILOS DE LAS IMAGENES PELICULAS */
+
+.img_film{
+    display: flex;
+    justify-content: flex-end;
+    margin: auto;
+    width: 200px;
+    height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.img_film:hover{
+    cursor: pointer;
+    width: 220px;
+    height: 320px;
+    transition: 0.3s ease all;
+    filter: brightness(0.6);
+    box-shadow: 10px 10px 10px solid black;
+}
+/* TABLA DE PELICULAS */
+.READ_PELICULA{
+    overflow: auto;
+    max-width: 200px
+}
+/*  PAGINA DE SELECCION  */
+
+.contenedor{
+    display: flex;
+    justify-content: space-around;
+}
+.caja1 {
+    width: 70%;
+}
+.caja2 {
+    width: 30%;
+  
+}
+/* Titulo de Pelicula Seleccionada */
+.t_greenyellow{
+    color: greenyellow;
+}
+/*FONDO NEGRO CON BORDE*/
+.background_black_box{
+    border-radius: 30px;
+    box-shadow: 0 1px 5px black;
+    background-color: #110920;
+}
+/* DIV DONDE ESTA LA PELICULA */
+.Pelicula{
+    border-radius: 15px;
+    box-shadow: 0 0 18px black;
+    height: 500px;
+}
+.play-red{
+    font-size: 150px;
+    color: red;
+}
+.play-red:hover{
+    cursor: pointer;
+    color: white;
+}
+/* REGISTER */
+.padre{
+   display: flex;
+    width: 100%;
+    justify-content: center ;
+    height: 95vh;
+}
+.Caja_Izquierda{
+    min-width: 50%;
+    max-width: 50%;
+}
+.Caja_Derecha{
+    width: 30%;
+}
+.Seleccionar_Plan:hover{
+    background-color: #f8702c;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.3s ease all;
+    font-family: cursive;
+}
+/* ANIMACION DE CARGA */
+.cargar{
+    position:fixed;
+    top:0;
+    left:0;
+    min-height:100vh;
+    width:100vw;
+    background-color:rgb(255, 255, 255);
+    z-index:999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CONTENEDOR DEL MENU PRINCIPAL */
+.contenedor-menu-principal{
+    max-width: 1400px;
+}
+/* PLANES DEL MENU PRINCIPAL */
+
+/* MENU DE INOVACION */
+.menu-inovacion {
+    margin: 50px auto 20px auto;
+}
+.menu-inovacion .titulo-inovacion {
+    color: greenyellow;
+    font:  40px/1 Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: uppercase;
+}
+.menu-inovacion .info-inovacion {
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+}
+.sub-menu-inovacion{
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+}
+.sub-menu-inovacion .div-imagen{
+    width: 600px;
+    height: 400px;
+    background-image: url(../img/Poster\ de\ inovacion.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* SEPARADOR MENU PRINCIPAL */
+.barra-blanca{
+    border: 10px solid rgb(255, 255, 255);
+    margin: 40px 0;
+    box-shadow: 0 1px 10px rgba(255, 255, 255, 0.536);
+}
+
+/* TITULOS DE MENUS DE PELICULAS */
+.titulo-menu-peliculas{
+    color: rgb(255, 255, 255);
+    font:  30px/1 Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: uppercase;
+}
+.ver-mas-menu-peliculas{
+    color: white;
+    font:  30px/1 Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: uppercase;
+}
+
+.ver-mas-menu-peliculas:hover{
+    cursor: pointer;
+    color: rgb(64, 149, 224);
+    transform: translateY(-7px);
+    transition:  0.3s ease all;
+    
+    
+}
+
+/* CARUSEL DEL MENU PRINCIPAL */ 
+.carusel{
+    font-size: 16px;
+    margin: 20px auto;
+    color:#fff;
+    padding: 0;
+    height: 500px;
+
+    box-shadow: 0 3px 10px rgba(41, 40, 40, 0.615);
+}
+.carusel .contenedor {
+    margin: 0 auto;
+    padding-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-end;
+}
+.carusel .titulo{
+    font-weight: 600;
+    font-size: 3.12em;
+    margin-bottom: 0.4em;
+}
+.carusel .descripcion{
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 1.75em;
+    max-width: 50%;
+    margin-bottom: 1.25em;
+}
+.carusel .boton{
+    background: rgba(0, 0, 0, 8.5);
+    border: none;
+    border-radius: 0.31em;
+    padding: 0.93em 1.87em;
+    color: #fff;
+    margin-right: pointer;
+    transition: .3s ease all;
+    font-size: 1.12em;
+}
+.carusel .boton:hover{
+    background: #fff;
+    color: #000;
+}
+.carusel .boton i {
+    margin-right: 1.25em;
+}
+.controles-carusel{
+    width: 20px;
+}
+/* PELICULAS RANDOM DEL MENU PRINCIPAL */
+.pelicula{
+    height: 400px;
+}
+
+
+/* BOTON RENOVACION DE LA CUENTA FLOTANTE */
+.btn-renovarcuenta-flotante {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+	font-size: 16px; /* Cambiar el tamaño de la tipografia */
+	text-transform: uppercase; /* Texto en mayusculas */
+	font-weight: bold; /* Fuente en negrita o bold */
+	color: #ffffff; /* Color del texto */
+	border-radius: 5px; /* Borde del boton */
+	letter-spacing: 2px; /* Espacio entre letras */
+	background-color: #E91E63; /* Color de fondo */
+	padding: 10px; /* Relleno del boton */
+	position: fixed;
+	bottom: 10%;
+	right: 5%;
+	transition: all 300ms ease 0ms;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	z-index: 5;
+}
+.btn-renovarcuenta-flotante:hover {
+  color: #E91E63;
+	background-color: #ffffff; /* Color de fondo al pasar el cursor */
+	box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+	transform: translateY(-7px);
+}
+.btn-renovarcuenta-flotante .boton{
+    color: rgb(255, 255, 255);
+    font:  30px/1 Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: uppercase;
+}
+
+/* MAS INFORMACION DE LA PELICULA */
+ .div-mas-info-pelicula{
+    margin:0 auto;
+     box-shadow: 0px 1px 5px rgb(163, 163, 163);
+}
+.table-mas-info-pelicula{
+    margin: 0;
+}
+.td-titulos-mas-info-pelicula{
+    background-color: rgba(0, 0, 0, 0.819);
+    color: white;
+    font-weight: bold;
+}
+.td-texto-mas-info-pelicula{
+    background-color: rgba(106, 96, 96, 0.897);
+    color: greenyellow;
+    font-weight: bold;
+}
+.td-link-mas-info-pelicula{
+    background-color: rgba(207, 202, 202, 0.897);
+}
+.td-link-mas-info-pelicula a{
+    color: blue;
+    color: blue;
+    font-weight: bold;
+}
+
+/* MENU DE CONFIGURACION DE USUARIOS */
+.tituloConfig{
+    padding: 10px;
+    font:  45px/1 Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: uppercase;
+}
+.tituloConfig:hover{
+    color: #E91E63;
+}
+.border-tituloConfig{
+    margin-bottom: 30px;
+}
+.border-tituloConfig:hover{
+    cursor: pointer;
+    box-shadow: 1px 1px 2px #1f1434;
+    background-color: #110920;
+    transform: translateY(-7px);
+    transition: 0.3s ease all;
+}
+
+.tituloValidesCuenta{
+    margin-top: 50px;
+    background-color: rgba(255, 0, 0, 0.214);
+    padding: 20px;
+    color: rgb(78, 190, 22);
+    font:  45px/1 Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: uppercase;
+}
+.Configtarjeta{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background:linear-gradient(rgb(0,0,0,.1) 100%,rgb(0,0,0,.1) 100% ), url(../img/fondoTarjeta.png) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 1px 1px 3px rgb(129, 128, 128);
+    border-radius: 25px;
+    width: 550px;
+    height:300px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.LABELS label{
+    font-size: 12px;
+}
+.mousePuntero{
+    cursor: pointer;
+}
+
+
+/* PLAN /*PACK*/
+.cont-planes-packs {
+    background-color: rgba(0, 0, 0, 0.787);
+    position: fixed;
+    z-index: 6;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+  }
+  /* PLANES */
+  .planes{
+    position: fixed;
+    top: 2%;
+    left: 10%;
+    width: 80%;
+    z-index: 999;
+    color: white;
+    margin:0 20px;
+    box-shadow: 0 3px 10px rgba(41, 40, 40, 0.615);
+  }
+  .plan-titulo{
+    font:  40px/1 Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: uppercase;
+  }
+  .contenedor-plan{
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .tabla-plan{
+    width: 33%;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 4px;
+    box-shadow: 0 1px 5px #240202;
+    padding: 60px;
+    text-align: center;
+    flex-grow: 1;
+    color: #030101;
+    background-color: rgba(255, 255, 255, 0.851);
+  
+  }
+  .tabla-plan>h2{
+    font-size: 30px;
+    margin-bottom: 35px;
+  }
+  .tabla-plan img{
+    width: 64px;
+    margin-bottom:35px;
+  }
+  .tabla-plan>h3{
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  .tabla-plan>p{
+    display: block;
+    margin-bottom: 20px;
+  }
+  .boton-plan{
+    display: inline-block;
+    width: 150px;
+    padding: 12px;
+    background: rgb(255, 60, 0);
+    color: #fefefe;
+    border-radius: 100px;
+    text-align: center;
+    font:  16px/1 Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: uppercase;
+    margin: auto;
+  }
+  .boton-plan:hover{
+    background-color: white;
+    color: black;
+    text-decoration: none;
+  }
+  .tabla-plan:hover{
+    background: #ff9900;
+    color: #f1f1f2;
+    transition: .1s all;
+    transform: scale(1.1);
+  }
+  /* PACKS */
+  .boton-pack{
+    display: inline-block;
+    width: 150px;
+    padding: 12px;
+    background: rgb(255, 60, 0);
+    color: #fefefe;
+    border-radius: 100px;
+    text-align: center;
+    font:  16px/1 Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: uppercase;
+    margin: auto;
+  }
+  .boton-pack:hover{
+    background-color: white;
+    color: black;
+    text-decoration: none;
+  }
+/* BOTON REGRESAR(DEL MENU DE SELECCION DE PLAN O PACK) */
+.btn-regresar {
+	font-size: 20px; /* Cambiar el tamaño de la tipografia */
+	text-transform: uppercase; /* Texto en mayusculas */
+	font-weight: bold; /* Fuente en negrita o bold */
+	color: #ffffff; /* Color del texto */
+	border-radius: 5px; /* Borde del boton */
+	letter-spacing: 2px; /* Espacio entre letras */
+	background-color: #E91E63; /* Color de fondo */
+	padding: 10px 23px; /* Relleno del boton */
+	position: fixed;
+	bottom: 4%;
+	left: 17%;
+	transition: all 300ms ease 0ms;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	z-index: 7;
+}
+.btn-regresar:hover {
+  color: #E91E63;
+	background-color: #ffffff; /* Color de fondo al pasar el cursor */
+	box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+	transform: translateY(-7px);
+}
+
+.pelicula-seleccionada-flotante {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+      font-size: 16px; /* Cambiar el tamaño de la tipografia */
+      text-transform: uppercase; /* Texto en mayusculas */
+      font-weight: bold; /* Fuente en negrita o bold */
+      color: #ffffff; /* Color del texto */
+      border-radius: 5px; /* Borde del boton */
+      letter-spacing: 2px; /* Espacio entre letras */
+      background-color: #E91E63; /* Color de fondo */
+      padding: 10px; /* Relleno del boton */
+      position: fixed;
+      bottom: 15%;
+      right: 2%;
+      transition: all 300ms ease 0ms;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+      z-index: 5;
+  }
+  .pelicula-seleccionada-flotante:hover {
+    color: #E91E63;
+      background-color: #ffffff; /* Color de fondo al pasar el cursor */
+      box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+      transform: translateY(-7px);
+  }
+  .ocultar-pel-select-flotante{
+    cursor: pointer;
+  }
+  .ocultar-pel-select-flotante:hover{
+    color:darkblue;
+  }
+  .mostrar-pelicula-seleccionada-flotante {
+      font-size: 20px; /* Cambiar el tamaño de la tipografia */
+      text-transform: uppercase; /* Texto en mayusculas */
+      font-weight: bold; /* Fuente en negrita o bold */
+      color: #ffffff; /* Color del texto */
+      border-radius: 5px; /* Borde del boton */
+      letter-spacing: 2px; /* Espacio entre letras */
+      background-color: #E91E63; /* Color de fondo */
+      padding: 10px 23px; /* Relleno del boton */
+      position: fixed;
+      bottom: 13%;
+      right: 13%;
+      transition: all 300ms ease 0ms;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+      z-index: 5;
+  }
+  .mostrar-pelicula-seleccionada-flotante:hover {
+    color: #E91E63;
+      background-color: #ffffff; /* Color de fondo al pasar el cursor */
+      box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+      transform: translateY(-7px);
+  }
+  
+  .cont-shop-peliculas{
+    background-color: #0b062e;
+    position: fixed;
+    z-index: 4;
+    top: 0;
+    left:0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  .caja1-shop-pelicula{
+    display: block;
+    margin: 0;
+    margin-left: 20px;
+    width: 70%;
+    height: 100%;
+    overflow: auto;
+  }
+  .caja1-shop-pelicula .Titulo{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #80b438;
+    box-shadow: 0 1px 10px #80b438;
+    margin-top: 10px;
+  }
+  .caja1-shop-pelicula .Peliculas{
+    display: flex;
+  }
+  .caja1-shop-pelicula .Peliculas .div-pelicula{
+    width:100px;
+    height:150px;
+    margin: 30px 40px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+    box-shadow: 0 1px 10px rgb(101, 99, 99);
+  }
+  .caja1-shop-pelicula .Peliculas .div-pelicula:hover{
+   scale: 1.1;
+   transition: 0.3s ease all;
+   filter: brightness(70%);
+   cursor: pointer;
+  }
+  .caja1-shop-pelicula .Peliculas .div-pelicula .titulo{
+    color: white;
+    font-size: 14px;
+    background-color: #0301019a;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  .nomb-de-pelicula {
+    margin: 0;
+    max-height: 40px;
+    overflow: hidden;
+  }
+  .nomb-de-pelicula p {
+    margin: 0;
+  }
+  .limitar-lineas {
+  
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+  
+  
+  .caja2-shop-pelicula{
+    background-color: #100943;
+    margin: 0;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 10px black;
+  }
+  .icono-pelicula{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .icono-pelicula .mjs-select-pelicula{
+    color: white;
+    background-color: rgb(73, 75, 221);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border-radius: 10px;
+    padding: 10px;
+    transition: 0.3s ease all;
+    cursor: pointer;
+  }
+
+  .btn-flotante {
+    font-size: 20px; /* Cambiar el tamaño de la tipografia */
+    text-transform: uppercase; /* Texto en mayusculas */
+    font-weight: bold; /* Fuente en negrita o bold */
+    color: #ffffff; /* Color del texto */
+    border-radius: 5px; /* Borde del boton */
+    letter-spacing: 2px; /* Espacio entre letras */
+    background-color: #E91E63; /* Color de fondo */
+    padding: 10px 23px; /* Relleno del boton */
+    position: fixed;
+    top: 10%;
+    left: 17%;
+    transition: all 300ms ease 0ms;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+  
+
+
+
+/* MEDIA QUERY*/
+@media screen and (max-width:1000px){
+    .container{
+        min-height: 100%;
+        padding: 2em;
+        
+    }
+    table tr{
+        display: flex;
+        flex-direction: column;
+        border: 1px solid;
+        padding: 1em;
+        margin: 1em;
+    }
+    table th, thead{
+        display: none;
+    }
+    .table td{
+        border: none;
+        border-bottom: 1px solid rgb(15, 14, 14);
+    }
+    table td[data-titulo] {
+        display: flex;
+        justify-content: space-between;
+    }
+    table td[data-titulo]:before{
+        content: attr(data-titulo);
+    }
+    main{
+       width: 100%;
+
+    }
+    .h1{
+        font-size: 26px;
+    }
+    .h2{
+        font-size: 26px;
+    }
+    .h3{
+        font-size: 16px; 
+    }
+    header button{
+        width: 100%;
+        background-color: red;
+    }
+    header .btn-group{
+        flex-direction: column;
+    }
+    footer{
+        text-align: center;
+    }
+    footer table{
+      display: flex;
+      justify-content: center;
+    }
+    .footer .mr-cinco{
+        margin-right:0px;
+    }
+    /* cambiar el tamaño de la imagen en pantallas mas chicas */
+    .img_film{
+        width: 150px;
+        height: 250px;
+    }
+    .img_film:hover{
+        cursor: pointer;
+        width: 155px;
+        height: 255px;
+        transition: 0.3s ease all;
+        filter: brightness(0.6);
+        box-shadow: 4px 4px 10px solid black;
+    }
+    /* PARA EL MENU DE SELECCION */
+    .contenedor{
+        flex-direction: column;
+        align-items: center;
+    }
+    .caja1{
+        width: 100%;
+    }
+    .caja2{
+        width: 100%;
+    }
+    .img{
+        width: 100px;
+        height: 150px;
+    }
+    #titulo .h4{
+        font-size: 15px;
+    }
+    .play-red{
+        font-size: 50px;
+    }
+    .Pelicula{
+        height: 300px;
+    }
+    /* BOTON DE ADMINISTRADOR */
+    .MenuAcciones{
+        left: 5px;
+        bottom: 25px;
+    }
+    /* MENU DE IDIOMAS */
+    .background_black_box .btn{
+        margin: 5px;
+    }
+
+   
+
+    
+    /* ESTILOS PARA EL CARUSEL */
+
+.pelicula-principal .contenedor {
+    margin: 0 auto;
+    margin-bottom: 6.25em;
+    display: flex;
+    flex-direction: column;
+}
+.pelicula-principal .titulo{
+    font-weight: 600;
+    font-size: 3.12em;
+    margin-bottom: 0.4em;
+    text-align: center;
+}
+.pelicula-principal .descripcion{
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 1.75em;
+    min-width: 100%;
+    margin-bottom: 1.25em;
+}
+.play-white{
+    font-size: 1em;
+}
+.pelicula-principal .boton{
+    background: rgba(0, 0, 0, 8.5);
+    border: none;
+    border-radius: 0.31em;
+    padding: 0.93em 1.87em;
+    color: #fff;
+    margin-right: pointer;
+    transition: .3s ease all;
+    font-size: 1.12em;
+    text-align: center;
+}
+.row-botones{
+    text-align: center;
+}
+.pelicula-principal .boton:hover{
+    background: #fff;
+    color: #000;
+}
+.pelicula-principal .boton i {
+    margin-right: 1.25em;
+}
+.tr-trailer-film{
+    display: none;
+}
+
+}
