@@ -14,11 +14,11 @@ Con **PelixFlix**, disfrutar de tus películas favoritas nunca ha sido tan fáci
 ![Demo](https://ejemploURL)
 ## Screenshots
 
-![App Screenshot](../screenshots/image1.png)
+![App Screenshot](screenshots/image1.png)
 
-![App Screenshot](../screenshots/image2.png)
+![App Screenshot](screenshots/image2.png)
 
-![App Screenshot](../screenshots/image3.png)
+![App Screenshot](screenshots/image3.png)
 
 
 ## Funcionalidades
