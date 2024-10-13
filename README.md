@@ -9,9 +9,6 @@ Con **PelixFlix**, disfrutar de tus películas favoritas nunca ha sido tan fáci
 
 
 
-## Demo
-
-![Demo](https://ejemploURL)
 ## Screenshots
 
 ![App Screenshot](screenshots/image1.png)
